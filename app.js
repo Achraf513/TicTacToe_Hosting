@@ -3,7 +3,7 @@ const http = require('http');
 const { Server } = require("socket.io");
 const cors = require("cors")
 require('dotenv').config()
-
+//test
 const app = express();
 app.use(cors());
 const port = process.env.PORT || 8080
@@ -20,7 +20,7 @@ const io = new Server(server, {
   }
 );
 app.get('/', (req, res) => {
-  res.send("Hello world!");
+  res.sendFile("./public/index.html");
 });
 app.get('/roomExists',(req,res)=>{
   var response = allRooms.includes(req.query.roomId)?true:false;
